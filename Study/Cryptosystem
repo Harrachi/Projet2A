@@ -16,3 +16,27 @@ Les grandes lignes de l'algorithme DES sont:
 3) Découpage des blocs en deux parties: gauche et droite, nommées G et D;
 4) Etapes de permutation et de substitution répétées 16 fois 
 5) Recollement des parties gauche et droite puis permutation initiale inverse.
+
+Exemple de code possible de cette algorithme proposé par abdelmoughite.
+
+void* DES_Encryption ( long long key , void* text )
+ {
+  long long block;
+  long block_Left;
+  long block_Right;
+  long* keys=alloc_keys(16); 
+  int nbBlocks_64_bits;
+  int i;
+  nbBlocks_64_bits = getNumberOfBlocks_64_bits(text);
+  create_16_keySub(keys,key);
+ 
+  for (i=0; i < nbBlocks_64_bits ; i++ )
+   {
+    block = getBlock_64_bits(i);
+    block_Right = getBlock_32_bits_Left(block);
+    block_Left  = getBlock_32_bits_Right(block);
+   
+   }
+ 
+ 
+ }
