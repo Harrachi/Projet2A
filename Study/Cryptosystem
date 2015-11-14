@@ -24,7 +24,7 @@ void* DES_Encryption ( long long key , void* text )
   long long block;
   long block_Left;
   long block_Right;
-  long* keys=alloc_keys(16); 
+  long* keys_16=alloc_keys(16); 
   int nbBlocks_64_bits;
   int i;
   nbBlocks_64_bits = getNumberOfBlocks_64_bits(text);
@@ -33,9 +33,15 @@ void* DES_Encryption ( long long key , void* text )
   for (i=0; i < nbBlocks_64_bits ; i++ )
    {
     block = getBlock_64_bits(i);
-    block_Right = getBlock_32_bits_Left(block);
-    block_Left  = getBlock_32_bits_Right(block);
-   
+    block_Right = getBlock_32_bits_Right(block);
+    block_Left  = getBlock_32_bits_Left(block);
+    
+    for (j = 0; j < 16 ; j++ )
+    {
+       block_Right_tmp=block_Right;
+       block_Right = addition( block_Left, F( block_Right, keys_16[j] )
+       block_Left  = block_Right_tmp;
+     }
    }
  
  
