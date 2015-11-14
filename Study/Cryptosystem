@@ -21,18 +21,20 @@ Exemple de code possible de cette algorithme proposé par abdelmoughite.
 
 void* DES_Encryption ( long long key , void* text )
  {
-  long long block;
+  long long block, block_encrypted;
   long block_Left;
   long block_Right;
   long* keys_16=alloc_keys(16); 
   int nbBlocks_64_bits;
-  int i;
+  int i,j;
+  void* text_encypted;
   nbBlocks_64_bits = getNumberOfBlocks_64_bits(text);
   create_16_keySub(keys,key);
  
   for (i=0; i < nbBlocks_64_bits ; i++ )
    {
     block = getBlock_64_bits(i);
+    permutate_block_64_bits (&block);
     block_Right = getBlock_32_bits_Right(block);
     block_Left  = getBlock_32_bits_Left(block);
     
@@ -42,7 +44,9 @@ void* DES_Encryption ( long long key , void* text )
        block_Right = addition( block_Left, F( block_Right, keys_16[j] )
        block_Left  = block_Right_tmp;
      }
+     block_encrypted = permutate_inverse( block_Left, block_Right );
+     insert_block_encypted(block_encrypted , text_encypted);
    }
- 
+ return text_encrypted;
  
  }
