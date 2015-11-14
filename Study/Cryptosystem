@@ -3,10 +3,10 @@ Cryptosystème DES.
 
 Les entrées:
 -Une clé codée sur 64 bits  sous forme de 16 blocks chaque blocks représente 4 bits.
-
+-text à chiffrer
 
 Les sorties:
-
+-text à chiffré.
 
 L'algorithme DES
 Les grandes lignes de l'algorithme DES sont:
