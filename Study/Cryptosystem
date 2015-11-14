@@ -1,3 +1,7 @@
-In this folder are the informations about the cryptosystems.
 
-Ok, i'll add my contribution 
+Cryptosystème DES.
+
+Les entrées:
+-Une clé codée sur 64 bits  sous forme de 16 blocks chaque blocks représente 4 bits.
+
+
