@@ -5,3 +5,14 @@ Les entrées:
 -Une clé codée sur 64 bits  sous forme de 16 blocks chaque blocks représente 4 bits.
 
 
+Les sorties:
+
+
+L'algorithme DES
+Les grandes lignes de l'algorithme DES sont:
+
+1) Fractionnement du texte en blocs de 64 bits (8 octets) 
+2) Permutation initiale des blocs;
+3) Découpage des blocs en deux parties: gauche et droite, nommées G et D;
+4) Etapes de permutation et de substitution répétées 16 fois 
+5) Recollement des parties gauche et droite puis permutation initiale inverse.
