@@ -1,0 +1,17 @@
+- Toutes les fonctions publiques devront faire référence à une structure du langage C (struct). Concrètement, elles recevront toujours un pointeur sur la structure comme paramètre. Pour uniformiser les fonctions, ce pointeur sera toujours son premier paramètre. Cette structure représentera l'objet.
+
+- Toutes les fonctions publiques devront avoir un pointeur de fonction associé parmi les membres de la structure. Ces pointeurs de fonction seront l'équivalent des fonctions membres du C++.
+
+- À l'utilisation de la classe, on n'appellera jamais une fonction publique directement. On le fera à l'aide du pointeur de fonction que l'on a mis dans la structure.
+
+- À l'utilisation de la classe, on n'accédera jamais aux membres (données) de la structure. On le fera toujours à l'aide des fonctions (par l'intermédiaire de leur pointeur de fonction).
+
+- Pour éviter les redondances de noms de fonction, on préfixera leur nom du nom de la structure. Par exemple TPile_Push() avec le préfixe TPile, car elle fait référence au type stuct TPile.
+
+- Les pointeurs de fonction membres de la structure auront par contre un nom court. Par exemple Push. Ils sont membres d'une structure, il n'y a plus de risque de redondance de nom.
+
+- Les variables créées sur la base de cette structure le seront avec une fonction spéciale que l'on écrira toujours de la même façon : Préfixe_Create pour la création d'objets sur la pile et New_Préfixe pour la création d'objets sur le tas. Ce qui fera : TPile_Create et New_TPile dans l'exemple de ce document. Cette fonction n'aura pas de pointeur correspondant dans la structure. Ceci est normal, quand on l'appelle, l'instance de la structure n'est pas encore créée. Ce sera donc la seule fonction de la classe appelée directement. C'est elle qui crée l'objet, elle devra donc être appelée avant toute utilisation d'un objet. Cette fonction est l'équivalent du constructeur des langages orientés objet.
+
+- La mémoire allouée en interne par la classe sera libérée par une fonction spéciale quand l'objet ne sera plus utile. On écrira toujours cette fonction sous la forme Préfixe_Free soit TPile_Free pour l'exemple. Cette fonction est l'équivalent du destructeur des langages orientés objet.
+
+- Chaque classe sera mise dans un fichier séparé de même que leurs déclarations dans un fichier entête séparé.
