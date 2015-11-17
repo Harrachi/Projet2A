@@ -1,0 +1,5 @@
+-clé privée (clé de déchiffrement)
+-clé publique (clé de chiffrement)
+-algorithme de génération de clé à partir d'un paramètre (produit un couple (clé publique, clé privée)
+-algorithme de chiffrement (chiffre un message avec la clé publique, produit un message chiffré)
+-algorithme de déchiffrement (déchiffre un message chiffré avec la clé privée, produit le message original)
