@@ -1,0 +1,13 @@
+-clé secrète (clé de chiffrement et déchiffrement)
+-algorithme de génération de clé à partir d'un paramètre (produit une clé)
+-algorithme de chiffrement (chiffre un message avec la clé, produit un message chiffré)
+-algorithme de déchiffrement (déchiffre un message chiffré avec la clé, produit le message original)
+
+-chiffrement par blocs:
+ * iterations
+ * sous-clés dérivées de la clé secrète
+
+-chiffrement par flots:
+ * traitement des données en continu
+
+(possibilité de transformer un chiffrement par blocs en un chiffrement par flots grâce à un mode opératoire)
