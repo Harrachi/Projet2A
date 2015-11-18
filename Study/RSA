@@ -69,13 +69,15 @@
              {
              int size_of_blocks = 4;
              long long n = keys.n;
+             Message *message = alloc_memory( m.size );
              Message_char *message_decypted;
              int i;
                for (i = 0; i< m.size; i++)
                {
-               message_decypted.message[i] = power_modulo( m.tab[i] , secret_key, n );
+               message.tab[i] = power_modulo( m.tab[i] , secret_key, n );
                }
-              message_decypted = transforme_to_characters(message_decypted, size_of_blocks ); 
+              message_decypted = transforme_to_characters(message, size_of_blocks ); 
+              
               return message_decrypted; 
             
              }
