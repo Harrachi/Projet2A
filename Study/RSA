@@ -53,12 +53,30 @@
              struct Message *message = numerate_message( m ,size_message, n );
              struct Message *message_encypted = split_message_on_blocks(message, size_of_block );
              int i;
-               for (i = 0; i< blocks.size; i++)
+               for (i = 0; i< message_encypted.size; i++)
                {
                message_encypted.tab[i] = power_modulo( message_encypted.tab[i] , e, n );
                }
               
               return message_encrypted; 
+            
+             }
+             
+             
+     2) Algorithme génique de déchiffrement d'un message:
+  
+  Message_char decrypt_message_rsa( Message m, Public_key keys, long long secret_key )
+             {
+             int size_of_blocks = 4;
+             long long n = keys.n;
+             Message_char *message_decypted;
+             int i;
+               for (i = 0; i< m.size; i++)
+               {
+               message_decypted.message[i] = power_modulo( m.tab[i] , secret_key, n );
+               }
+              message_decypted = transforme_to_characters(message_decypted, size_of_blocks ); 
+              return message_decrypted; 
             
              }
    
