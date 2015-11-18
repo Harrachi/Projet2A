@@ -1,0 +1,17 @@
+
+
+
+1) préparation des clés.
+ 1.1) choix de deux nombre premiers p et q
+     dans la pratique ces deux nombre premiers sont des trsè grands nombres
+     jusqu'a plusieurs centaines de chiffres décimaux.
+  1.2) calcule de n
+      n= p*q et phi(n) = (p-1)*(q-1)
+  1.3) choix d'un exposant et calcule de son inverse
+     - on choisit un exposant e tel que e ^ phi(n) = 1
+     - calcule de l'inverse d de e par l'algorithme d'euclide étendu  d * e = 1 mod phi(n)
+  1.4) clé public, clé privé
+      --> clé public c'est ( n, e )
+      --> clé privé c'est ( d ) 
+      
+    
