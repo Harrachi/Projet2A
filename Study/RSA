@@ -43,22 +43,23 @@
              }
              
              
-    1) Algorithme génique de chiffrement d'un message:
+    2) Algorithme génique de chiffrement d'un message:
   
-  Public_key encrypt_message_rsa( char *m, int size_message, Public_key keys )
+  Message encrypt_message_rsa( char *m, int size_message, Public_key keys )
              {
              int size_of_block = 4;
-             long long valueMax = keys.n;
-             struct Message *message = numerate_message( m ,size_message, valueMax );
-             struct Message *blocks = split_message_on_blocks(message, size_of_block );
+             long long n = keys.n;
+             long long e = keys.e;
+             struct Message *message = numerate_message( m ,size_message, n );
+             struct Message *message_encypted = split_message_on_blocks(message, size_of_block );
              int i;
                for (i = 0; i< blocks.size; i++)
                {
-               
-               
+               message_encypted.tab[i] = power_modulo( message_encypted.tab[i] , e, n );
                }
-             
-             
+              
+              return message_encrypted; 
+            
              }
    
     
