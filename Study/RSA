@@ -10,8 +10,31 @@
   1.3) choix d'un exposant et calcule de son inverse
      - on choisit un exposant e tel que e ^ phi(n) = 1
      - calcule de l'inverse d de e par l'algorithme d'euclide étendu  d * e = 1 mod phi(n)
-  1.4) clé public, clé privé
+  1.4) clé public, clé privée
       --> clé public c'est ( n, e )
       --> clé privé c'est ( d ) 
       
+      
+ 2) chiffrement du message 
+    1.1) numérisation du message 
+         --transformation du texte en des chiifres strictement inférieure à n.
+    1.2) chiffrement
+       on calcule x = m^e mod n  ---> x le message chiffré.
+       
+ 3) déchiffrement du message
+    3.1) chiffrement
+       on calcule m' = x^d mod n  --->  m'  est le message déchiffré.
+      
+      
+  1) Algorithme génique de génération d'un clé public est:
+  
+  Public_key genrate_public_key_rsa ()
+             {
+             long long p = get_randam_prime_number();
+             long long p = get_randam_prime_number();
+             
+             
+             
+             }
+   
     
