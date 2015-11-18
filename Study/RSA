@@ -14,7 +14,6 @@
       --> clé public c'est ( n, e )
       --> clé privé c'est ( d ) 
       
-      
  2) chiffrement du message 
     1.1) numérisation du message 
          --transformation du texte en des chiifres strictement inférieure à n.
@@ -30,9 +29,34 @@
   
   Public_key genrate_public_key_rsa ()
              {
-             long long p = get_randam_prime_number();
-             long long p = get_randam_prime_number();
+             long long p = get_random_prime_number(size_on_decimal);
+             long long q = get_random_prime_number(size_on_decimal);
+             long long n = product_of( p,q);
+             long long phi_n = product_of( p - 1,q - 1);
+             long e = get_random_exponent_with_constraint_phi_n ( phi_n );
+             long d = get_inverse_exponent(e , phi_n);
              
+             struct Public_key keys;
+             keys.n = n;
+             keys.e = e;
+             return keys;
+             }
+             
+             
+    1) Algorithme génique de chiffrement d'un message:
+  
+  Public_key encrypt_message_rsa( char *m, int size_message, Public_key keys )
+             {
+             int size_of_block = 4;
+             long long valueMax = keys.n;
+             struct Message *message = numerate_message( m ,size_message, valueMax );
+             struct Message *blocks = split_message_on_blocks(message, size_of_block );
+             int i;
+               for (i = 0; i< blocks.size; i++)
+               {
+               
+               
+               }
              
              
              }
